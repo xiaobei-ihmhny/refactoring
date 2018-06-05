@@ -12,13 +12,16 @@
     <artifactId>chapter1</artifactId>
 
     <name>chapter1</name>
-    <url>http://www.example.com</url>
 
     <properties>
 
     </properties>
 
     <dependencies>
-
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 </project>
