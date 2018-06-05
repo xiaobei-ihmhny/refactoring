@@ -4,8 +4,11 @@ import org.junit.Test;
 
 public class StatementTest {
 
-    @Test
-    public void testStatement(){
+    /**
+     * 修改前
+     * @return
+     */
+    private String beforeStatement(){
         Movie movie0_1 = new Movie("人在囧途",0);
         Movie movie1_1 = new Movie("复仇者联盟",1);
         Movie movie0_2 = new Movie("无人区",0);
@@ -28,6 +31,23 @@ public class StatementTest {
         customer.addRental(rental3_2);
         customer.addRental(rental3_3);
         String statement = customer.statement();
-        System.out.println("result为：" + statement);
+        return statement;
+    }
+
+    @Test
+    public void testStatement(){
+        String statement = beforeStatement();
+        String beforeStatement = "Rental Record for xiaobei\n" +
+                "\t无人区\t2.0\n" +
+                "\t人在囧途\t2.0\n" +
+                "\t肖申克的救赎\t3.0\n" +
+                "\t复仇者联盟\t9.0\n" +
+                "\t泰坦尼克号\t1.5\n" +
+                "\t无极\t1.5\n" +
+                "Amount owed is 19.0\n" +
+                "You earned 7 frequent renter points";
+        System.out.println("result：" + beforeStatement.equals(statement));
+        System.out.println("result1为：" + statement);
+        System.out.println("result2为：" + beforeStatement);
     }
 }
