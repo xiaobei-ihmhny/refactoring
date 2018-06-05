@@ -8,7 +8,7 @@ public class StatementTest {
      * 修改前
      * @return
      */
-    private String beforeStatement(){
+    private Customer beforeStatement(){
         Movie movie0_1 = new Movie("人在囧途",0);
         Movie movie1_1 = new Movie("复仇者联盟",1);
         Movie movie0_2 = new Movie("无人区",0);
@@ -30,13 +30,13 @@ public class StatementTest {
         customer.addRental(rental2_3);
         customer.addRental(rental3_2);
         customer.addRental(rental3_3);
-        String statement = customer.statement();
-        return statement;
+        return customer;
     }
 
     @Test
     public void testStatement(){
-        String statement = beforeStatement();
+        String statement = beforeStatement().statement();
+        String htmlStatement = beforeStatement().htmlStatement();
         String beforeStatement = "Rental Record for xiaobei\n" +
                 "\t无人区\t2.0\n" +
                 "\t人在囧途\t2.0\n" +
@@ -47,7 +47,8 @@ public class StatementTest {
                 "Amount owed is 19.0\n" +
                 "You earned 7 frequent renter points";
         System.out.println("result：" + beforeStatement.equals(statement));
-        System.out.println("result1为：" + statement);
+        System.out.println("result1-1为：" + statement);
+//        System.out.println("result1-2为：" + htmlStatement);
         System.out.println("result2为：" + beforeStatement);
     }
 }
