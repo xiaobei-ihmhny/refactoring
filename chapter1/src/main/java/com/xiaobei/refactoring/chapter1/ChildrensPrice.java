@@ -2,10 +2,12 @@ package com.xiaobei.refactoring.chapter1;
 
 public class ChildrensPrice extends Price {
 
+    @Override
     int getPriceCode() {
         return Movie.CHILDRENS;
     }
 
+    @Override
     double getCharge(int daysRented) {
         double result = 1.5;
         if (daysRented > 3)

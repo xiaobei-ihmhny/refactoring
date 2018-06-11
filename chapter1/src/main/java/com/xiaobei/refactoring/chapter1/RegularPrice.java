@@ -1,6 +1,7 @@
 package com.xiaobei.refactoring.chapter1;
 
 public class RegularPrice extends Price {
+    @Override
     int getPriceCode() {
         return Movie.REGULAR;
     }
